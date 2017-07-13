@@ -9,6 +9,18 @@ export class SentenceService {
 
   getSentences() {
     return this.http.get('http://localhost:8080/api/v1/libs/')
-      .map(response => response.json());
+      .map(response => response.json())
+      .map(response => this.transformSentences(response));
+  }
+
+  transformSentences(originalSentences) {
+    let sentences = [];
+
+    for (let sentence of originalSentences) {
+      sentence.words = sentence.text.match(/{{.+?}}/g);
+      sentences.push(sentence);
+    }
+
+    return sentences;
   }
 }
