@@ -15,8 +15,7 @@ export class SentenceComponentComponent implements OnInit {
   ngOnInit() {
     this.sentenceService.getSentences()
       .subscribe(response => {
-        this.sentences = response.json();
+        this.sentences = response;
       });
   }
-
 }
