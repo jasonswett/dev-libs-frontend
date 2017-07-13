@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SentenceService } from './sentence.service';
 
 @Component({
   selector: 'dl-root',
@@ -7,12 +6,4 @@ import { SentenceService } from './sentence.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  sentences = [];
-
-  constructor(private sentenceService: SentenceService) {
-    this.sentenceService.getSentences()
-      .subscribe(response => {
-        this.sentences = response.json();
-      });
-  }
 }

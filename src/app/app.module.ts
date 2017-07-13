@@ -4,10 +4,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SentenceService } from './sentence.service';
+import { SentenceComponentComponent } from './sentence-component/sentence-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SentenceComponentComponent
   ],
   imports: [
     BrowserModule,
